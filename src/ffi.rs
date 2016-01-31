@@ -167,7 +167,7 @@ extern "C" {
                                                                    -> c_int;
 
     pub fn secp256k1_ecdsa_recoverable_signature_convert(cx: *const Context, sig: *mut Signature,
-                                                         input: *const RecoverableSignature) 
+                                                         input: *const RecoverableSignature)
                                                          -> c_int;
 
     pub fn secp256k1_ecdsa_signature_normalize(cx: *const Context, out_sig: *mut Signature,
@@ -265,5 +265,11 @@ extern "C" {
                           point: *const PublicKey,
                           scalar: *const c_uchar)
                           -> c_int;
+
+    pub fn secp256k1_ecdh_raw(cx: *const Context,
+                              out: *mut SharedSecret,
+                              point: *const PublicKey,
+                              scalar: *const c_uchar)
+                              -> c_int;
 }
 
